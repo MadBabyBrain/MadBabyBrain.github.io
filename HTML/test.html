@@ -3,6 +3,9 @@
 
 <head>
     <title>Incremental</title>
+    <link rel="stylesheet" href="/test.css">
+
+    <script src="/test.js"></script>
 </head>
 
 <body>
@@ -28,11 +31,11 @@
             <p class="value_2" id="shop_DPS_cost_value">null</p>
             <p class="title_3" id="shop_CLICK_cost">Click Cost : </p>
             <p class="value_3" id="shop_CLICK_cost_value">null</p>
-            <button class="title_4" margin="10px">upgrade DPS</button>
-            <button class="value_4" margin="10px">upgrade CLICK</button>
+            <button class="title_4" margin="10px" onclick=increaseDPS()>upgrade DPS</button>
+            <button class="value_4" margin="10px" onclick=increaseCLICK()>upgrade CLICK</button>
             <p class="title_5" id="">Multiplier : </p>
             <p class="value_5" id="prestige_val">null</p>
-            <button> Prestige </button>
+            <button onclick=prestige()> Prestige </button>
             <p class="value_6" id="curr_pres_level">null</p>
         </div>
     </div>

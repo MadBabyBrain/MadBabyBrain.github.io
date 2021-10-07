@@ -1,0 +1,146 @@
+body {
+    overflow: hidden;
+}
+
+.navigation {
+    background-color: #776871;
+    grid-column: 3 / 9;
+    grid-row: 2 / 3;
+}
+
+.navigation:hover {
+    background-color: #665b62;
+}
+
+.main {
+    user-select: none;
+    background-color: #91A8A4;
+
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-areas:
+    ". . . . title title . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". enemy enemy . player player . shop shop ."
+    ". enemy enemy . player player . shop shop ."
+    ". enemy enemy . player player . shop shop ."
+    ". enemy enemy . player player . shop shop ."
+    ". enemy enemy . player player . shop shop ."
+    ". enemy enemy . player player . shop shop ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    grid-column: 5 / 7;
+    grid-row: 1 / 2;
+}
+
+p {
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#enemy {
+    grid-area: enemy;
+    /* grid-column: 2 / 4;
+    grid-row: 4 / 10; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: #C4D7F2;
+}
+
+#player {
+    grid-area: player;
+    /* grid-column: 5 / 7;
+    grid-row: 4 / 10; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: #C4D7F2;
+}
+
+#shop {
+    grid-area: shop;
+    /* grid-column: 8 / 10;
+    grid-row: 4 / 10; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: #C4D7F2;
+}
+
+title_1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+title_2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+title_3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+title_4 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+title_5 {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+
+value_1 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+value_2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+value_3 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+value_4 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+value_5 {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
