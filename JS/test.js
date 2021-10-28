@@ -44,6 +44,7 @@ window.onload = () => {
     curr_pres_level = document.getElementById('curr_pres_level');
     title = document.getElementById('title');
 
+    if (localStorage.getItem('off_start_date')) { var current_date = new Date(); var seconds = (current_date.getTime() - localStorage.getItem('off_start_date').getTime()) / 1000; console.log(seconds); }
     if (localStorage.getItem('level')) { level = parseInt(localStorage.getItem('level')); } else { level = 1 }
     if (localStorage.getItem('prestige_level')) { prestige_level = parseInt(localStorage.getItem('prestige_level')); } else { prestige_level = 500 }
     if (localStorage.getItem('prestige_mult')) { prestige_mult = parseInt(localStorage.getItem('prestige_mult')); } else { prestige_mult = 0 }
@@ -66,6 +67,7 @@ window.onload = () => {
 }
 
 window.onbeforeunload = () => {
+    localStorage.setItem('off_start_date', new Date());
     localStorage.setItem('level', level);
     localStorage.setItem('prestige_level', prestige_level);
     localStorage.setItem('prestige_mult', prestige_mult);
