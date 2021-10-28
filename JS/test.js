@@ -47,7 +47,7 @@ window.onload = () => {
     if (localStorage.getItem('level')) { level = parseInt(localStorage.getItem('level')); } else { level = 1 }
     if (localStorage.getItem('prestige_level')) { prestige_level = parseInt(localStorage.getItem('prestige_level')); } else { prestige_level = 500 }
     if (localStorage.getItem('prestige_mult')) { prestige_mult = parseInt(localStorage.getItem('prestige_mult')); } else { prestige_mult = 0 }
-    if (localStorage.getItem('enemy')) { enemy.hp = parseInt(localStorage.getItem('enemy')); } else { enemy.hp = 0 }
+    if (localStorage.getItem('enemy')) { enemy.hp = parseInt(localStorage.getItem('enemy')); } else { enemy.hp = 8 }
     if (localStorage.getItem('player_click')) { player.click = parseInt(localStorage.getItem('player_click')); } else { player.click = 1 }
     if (localStorage.getItem('player_dmg')) { player.damage = parseInt(localStorage.getItem('player_dmg')); } else { player.damage = 0 }
     if (localStorage.getItem('shop_money')) { shop.money = parseInt(localStorage.getItem('shop_money')); } else { shop.money = 0 }
