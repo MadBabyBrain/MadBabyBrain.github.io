@@ -30,6 +30,8 @@ var prestige_val;
 var curr_pres_level;
 var title;
 
+var off_start_date;
+
 
 
 window.onload = () => {
@@ -67,7 +69,9 @@ window.onload = () => {
 }
 
 window.onbeforeunload = () => {
-    localStorage.setItem('off_start_date', new Date());
+    off_start_date = new Date()
+    alert(off_start_date)
+    localStorage.setItem('off_start_date', off_start_date);
     localStorage.setItem('level', level);
     localStorage.setItem('prestige_level', prestige_level);
     localStorage.setItem('prestige_mult', prestige_mult);
