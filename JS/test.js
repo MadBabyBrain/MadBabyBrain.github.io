@@ -59,6 +59,7 @@ window.onload = () => {
 }
 
 window.onbeforeunload = () => {
+    console.log('Unloading page')
     localStorage.setItem('level', level);
     localStorage.setItem('prestige_level', prestige_level);
     localStorage.setItem('prestige_mult', prestige_mult);
