@@ -43,10 +43,16 @@ window.onload = () => {
     curr_pres_level = document.getElementById('curr_pres_level');
     title = document.getElementById('title');
 
-    if (localStorage.getItem('level')) {
-        console.log('level exists in storage')
-        var level = localStorage.getItem('level');
-    }
+    if (localStorage.getItem('level')) { var level = localStorage.getItem('level'); }
+    if (localStorage.getItem('prestige_level')) { var prestige_level = localStorage.getItem('prestige_level'); }
+    if (localStorage.getItem('prestige_mult')) { var prestige_mult = localStorage.getItem('prestige_mult'); }
+    if (localStorage.getItem('enemy')) { enemy.hp = localStorage.getItem('enemy'); }
+    if (localStorage.getItem('player_click')) { player.click = localStorage.getItem('player_click'); }
+    if (localStorage.getItem('player_dmg')) { player.damage = localStorage.getItem('player_dmg'); }
+    if (localStorage.getItem('shop_money')) { shop.money = localStorage.getItem('shop_money'); }
+    if (localStorage.getItem('shop_dmg_cost')) { shop.DPScost = localStorage.getItem('shop_dmg_cost'); }
+    if (localStorage.getItem('shop_click_cost')) { shop.CLICKcost = localStorage.getItem('shop_click_cost'); }
+
 
     enemy_hp.innerHTML = enemy.hp;
     player_click_dmg.innerHTML = player.click;
@@ -60,13 +66,15 @@ window.onload = () => {
 }
 
 window.onbeforeunload = () => {
-    console.log('Unloading page')
-    localStorage.setItem('level', level);
-    localStorage.setItem('prestige_level', prestige_level);
-    localStorage.setItem('prestige_mult', prestige_mult);
-    localStorage.setItem('enemy', enemy);
-    localStorage.setItem('player', player);
-    localStorage.setItem('shop', shop);
+    localStorage.getItem('level', level);
+    localStorage.getItem('prestige_level', prestige_level);
+    localStorage.getItem('prestige_mult', prestige_mult);
+    localStorage.getItem('enemy', enemy.hp);
+    localStorage.getItem('player_click', player.click);
+    localStorage.getItem('player_dmg', player.damage);
+    localStorage.getItem('shop_money', shop.money);
+    localStorage.getItem('shop_dmg_cost', shop.DPScost);
+    localStorage.getItem('shop_click_cost', shop.CLICKcost);
 }
 
 var increaseDPS = () => {
