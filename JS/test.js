@@ -46,7 +46,7 @@ window.onload = () => {
     curr_pres_level = document.getElementById('curr_pres_level');
     title = document.getElementById('title');
 
-    if (localStorage.getItem('off_start_date')) { var seconds = ((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date'))); console.log(seconds); }
+    if (localStorage.getItem('off_start_date')) { var seconds = Math.floor((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date'))); console.log(seconds); }
     if (localStorage.getItem('level')) { level = parseInt(localStorage.getItem('level')); } else { level = 1 }
     if (localStorage.getItem('prestige_level')) { prestige_level = parseInt(localStorage.getItem('prestige_level')); } else { prestige_level = 500 }
     if (localStorage.getItem('prestige_mult')) { prestige_mult = parseInt(localStorage.getItem('prestige_mult')); } else { prestige_mult = 0 }
