@@ -50,7 +50,7 @@ window.onload = () => {
     if (localStorage.getItem('enemy')) { enemy.hp = localStorage.getItem('enemy'); } else { enemy.hp = 0 }
     if (localStorage.getItem('player_click')) { player.click = localStorage.getItem('player_click'); } else { player.click = 1 }
     if (localStorage.getItem('player_dmg')) { player.damage = localStorage.getItem('player_dmg'); } else { player.damage = 0 }
-    if (localStorage.getItem('shop_money')) { shop.money = localStorage.getItem('shop_money'); } else { shop.money = 0 }
+    if (localStorage.getItem('shop_money')) { shop.money = Number(localStorage.getItem('shop_money')); } else { shop.money = 0 }
     if (localStorage.getItem('shop_dmg_cost')) { shop.DPScost = localStorage.getItem('shop_dmg_cost'); } else { shop.DPScost = 5 }
     if (localStorage.getItem('shop_click_cost')) { shop.CLICKcost = localStorage.getItem('shop_click_cost'); } else { shop.CLICKcost = 1 }
 
