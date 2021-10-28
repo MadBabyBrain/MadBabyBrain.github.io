@@ -66,15 +66,15 @@ window.onload = () => {
 }
 
 window.onbeforeunload = () => {
-    localStorage.getItem('level', level);
-    localStorage.getItem('prestige_level', prestige_level);
-    localStorage.getItem('prestige_mult', prestige_mult);
-    localStorage.getItem('enemy', enemy.hp);
-    localStorage.getItem('player_click', player.click);
-    localStorage.getItem('player_dmg', player.damage);
-    localStorage.getItem('shop_money', shop.money);
-    localStorage.getItem('shop_dmg_cost', shop.DPScost);
-    localStorage.getItem('shop_click_cost', shop.CLICKcost);
+    // localStorage.getItem('level', level);
+    // localStorage.getItem('prestige_level', prestige_level);
+    // localStorage.getItem('prestige_mult', prestige_mult);
+    // localStorage.getItem('enemy', enemy.hp);
+    // localStorage.getItem('player_click', player.click);
+    // localStorage.getItem('player_dmg', player.damage);
+    // localStorage.getItem('shop_money', shop.money);
+    // localStorage.getItem('shop_dmg_cost', shop.DPScost);
+    // localStorage.getItem('shop_click_cost', shop.CLICKcost);
 }
 
 var increaseDPS = () => {
