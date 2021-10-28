@@ -45,6 +45,7 @@ window.onload = () => {
 
     if (localStorage.getItem('level')) {
         console.log('level exists in storage')
+        level = localStorage.getItem('level');
     }
 
     enemy_hp.innerHTML = enemy.hp;
