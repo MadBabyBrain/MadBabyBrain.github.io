@@ -1,22 +1,22 @@
 
 
-var level = 1;
-var prestige_level = 500;
-var prestige_mult = 0;
+var level;
+var prestige_level;
+var prestige_mult;
 
 var enemy = {
-    hp: 8
+    hp: 0
 }
 
 var player = {
     damage: 0,
-    click: 1
+    click: 0
 }
 
 var shop = {
     money: 0,
-    DPScost: 5,
-    CLICKcost: 1
+    DPScost: 0,
+    CLICKcost: 0
 }
 
 var main;
@@ -33,6 +33,7 @@ var title;
 
 
 window.onload = () => {
+
     enemy_hp = document.getElementById('e_health_value');
     player_click_dmg = document.getElementById('p_click_damage_value');
     player_dps = document.getElementById('p_dps_value');
@@ -43,16 +44,15 @@ window.onload = () => {
     curr_pres_level = document.getElementById('curr_pres_level');
     title = document.getElementById('title');
 
-    if (localStorage.getItem('level')) { var level = localStorage.getItem('level'); }
-    if (localStorage.getItem('prestige_level')) { var prestige_level = localStorage.getItem('prestige_level'); }
-    if (localStorage.getItem('prestige_mult')) { var prestige_mult = localStorage.getItem('prestige_mult'); }
-    if (localStorage.getItem('enemy')) { enemy.hp = localStorage.getItem('enemy'); }
-    if (localStorage.getItem('player_click')) { player.click = localStorage.getItem('player_click'); }
-    if (localStorage.getItem('player_dmg')) { player.damage = localStorage.getItem('player_dmg'); }
-    if (localStorage.getItem('shop_money')) { shop.money = localStorage.getItem('shop_money'); }
-    if (localStorage.getItem('shop_dmg_cost')) { shop.DPScost = localStorage.getItem('shop_dmg_cost'); }
-    if (localStorage.getItem('shop_click_cost')) { shop.CLICKcost = localStorage.getItem('shop_click_cost'); }
-
+    if (localStorage.getItem('level')) { level = localStorage.getItem('level'); } else { level = 1 }
+    if (localStorage.getItem('prestige_level')) { prestige_level = localStorage.getItem('prestige_level'); } else { prestige_level = 500 }
+    if (localStorage.getItem('prestige_mult')) { prestige_mult = localStorage.getItem('prestige_mult'); } else { prestige_mult = 0 }
+    if (localStorage.getItem('enemy')) { enemy.hp = localStorage.getItem('enemy'); } else { enemy.hp = 0 }
+    if (localStorage.getItem('player_click')) { player.click = localStorage.getItem('player_click'); } else { player.click = 1 }
+    if (localStorage.getItem('player_dmg')) { player.damage = localStorage.getItem('player_dmg'); } else { player.damage = 0 }
+    if (localStorage.getItem('shop_money')) { shop.money = localStorage.getItem('shop_money'); } else { shop.money = 0 }
+    if (localStorage.getItem('shop_dmg_cost')) { shop.DPScost = localStorage.getItem('shop_dmg_cost'); } else { shop.DPScost = 5 }
+    if (localStorage.getItem('shop_click_cost')) { shop.CLICKcost = localStorage.getItem('shop_click_cost'); } else { shop.CLICKcost = 1 }
 
     enemy_hp.innerHTML = enemy.hp;
     player_click_dmg.innerHTML = player.click;
