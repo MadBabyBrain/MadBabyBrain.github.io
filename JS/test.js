@@ -1,3 +1,5 @@
+
+
 var level = 1;
 var prestige_level = 500;
 var prestige_mult = 0;
@@ -41,6 +43,10 @@ window.onload = () => {
     curr_pres_level = document.getElementById('curr_pres_level');
     title = document.getElementById('title');
 
+    if (localStorage.getItem('level')) {
+        console.log('level exists in storage')
+    }
+
     enemy_hp.innerHTML = enemy.hp;
     player_click_dmg.innerHTML = player.click;
     player_dps.innerHTML = player.damage;
@@ -52,6 +58,14 @@ window.onload = () => {
     title.innerHTML = 'Level: ' + level;
 }
 
+window.onbeforeunload = () => {
+    localStorage.setItem('level', level);
+    localStorage.setItem('prestige_level', prestige_level);
+    localStorage.setItem('prestige_mult', prestige_mult);
+    localStorage.setItem('enemy', enemy);
+    localStorage.setItem('player', player);
+    localStorage.setItem('shop', shop);
+}
 
 var increaseDPS = () => {
     if (shop.money >= shop.DPScost) {
