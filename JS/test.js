@@ -46,7 +46,7 @@ window.onload = () => {
     curr_pres_level = document.getElementById('curr_pres_level');
     title = document.getElementById('title');
 
-    if (localStorage.getItem('off_start_date')) { var seconds = Math.floor((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date'))); console.log(seconds); }
+    if (localStorage.getItem('off_start_date')) { var seconds = Math.floor((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date'))); }
     if (localStorage.getItem('level')) { level = parseInt(localStorage.getItem('level')); } else { level = 1 }
     if (localStorage.getItem('prestige_level')) { prestige_level = parseInt(localStorage.getItem('prestige_level')); } else { prestige_level = 500 }
     if (localStorage.getItem('prestige_mult')) { prestige_mult = parseInt(localStorage.getItem('prestige_mult')); } else { prestige_mult = 0 }
@@ -56,6 +56,22 @@ window.onload = () => {
     if (localStorage.getItem('shop_money')) { shop.money = parseInt(localStorage.getItem('shop_money')); } else { shop.money = 0 }
     if (localStorage.getItem('shop_dmg_cost')) { shop.DPScost = parseInt(localStorage.getItem('shop_dmg_cost')); } else { shop.DPScost = 5 }
     if (localStorage.getItem('shop_click_cost')) { shop.CLICKcost = parseInt(localStorage.getItem('shop_click_cost')); } else { shop.CLICKcost = 1 }
+
+    var accum_health = 0;
+    var accum_level = level;
+    var accum_money = 0;
+    while (accum_health < (player.damage * seconds)) {
+        accum_health += ((1 / 10) * Math.pow(accum_level, 2) + 6);
+        accum_level++;
+        accum_money += ((1 / 10) * Math.pow(accum_level, 2) + 6);
+    }
+    accum_health -= ((1 / 10) * Math.pow(accum_level, 2) + 6);
+    accum_money -= ((1 / 10) * Math.pow(accum_level, 2) + 6);
+    accum_level--;
+
+    level = accum_level;
+    shop.money += accum_money;
+    enemy.hp = ((1 / 10) * Math.pow(level, 2) + 6);
 
     enemy_hp.innerHTML = enemy.hp;
     player_click_dmg.innerHTML = player.click;
