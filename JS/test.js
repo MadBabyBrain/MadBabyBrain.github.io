@@ -57,21 +57,21 @@ window.onload = () => {
     if (localStorage.getItem('shop_dmg_cost')) { shop.DPScost = parseInt(localStorage.getItem('shop_dmg_cost')); } else { shop.DPScost = 5 }
     if (localStorage.getItem('shop_click_cost')) { shop.CLICKcost = parseInt(localStorage.getItem('shop_click_cost')); } else { shop.CLICKcost = 1 }
 
-    var accum_health = 0;
-    var accum_level = level;
-    var accum_money = 0;
-    while (accum_health < (player.damage * seconds)) {
-        accum_health += ((1 / 10) * Math.pow(accum_level, 2) + 6);
-        accum_level++;
-        accum_money += accum_level;
-    }
-    accum_health -= ((1 / 10) * Math.pow(accum_level, 2) + 6);
-    accum_money -= accum_level;
-    accum_level--;
+    // var accum_health = 0;
+    // var accum_level = level;
+    // var accum_money = 0;
+    // while (accum_health < (player.damage * seconds)) {
+    //     accum_health += ((1 / 10) * Math.pow(accum_level, 2) + 6);
+    //     accum_level++;
+    //     accum_money += accum_level;
+    // }
+    // accum_health -= ((1 / 10) * Math.pow(accum_level, 2) + 6);
+    // accum_money -= accum_level;
+    // accum_level--;
 
-    level = accum_level;
-    shop.money += Math.floor(accum_money);
-    enemy.hp = ((1 / 10) * Math.pow(level, 2) + 6);
+    // level = accum_level;
+    // shop.money += Math.floor(accum_money);
+    // enemy.hp = ((1 / 10) * Math.pow(level, 2) + 6);
 
     enemy_hp.innerHTML = enemy.hp;
     player_click_dmg.innerHTML = Math.floor(player.click + (player.click * prestige_mult));
