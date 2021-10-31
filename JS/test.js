@@ -63,10 +63,10 @@ window.onload = () => {
     while (accum_health < (player.damage * seconds)) {
         accum_health += ((1 / 10) * Math.pow(accum_level, 2) + 6);
         accum_level++;
-        accum_money += ((1 / 10) * Math.pow(accum_level, 2) + 6);
+        accum_money += accum_level;
     }
     accum_health -= ((1 / 10) * Math.pow(accum_level, 2) + 6);
-    accum_money -= ((1 / 10) * Math.pow(accum_level, 2) + 6);
+    accum_money -= accum_level;
     accum_level--;
 
     level = accum_level;
