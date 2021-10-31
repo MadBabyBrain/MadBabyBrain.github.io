@@ -74,8 +74,8 @@ window.onload = () => {
     enemy.hp = ((1 / 10) * Math.pow(level, 2) + 6);
 
     enemy_hp.innerHTML = enemy.hp;
-    player_click_dmg.innerHTML = player.click;
-    player_dps.innerHTML = player.damage;
+    player_click_dmg.innerHTML = Math.floor(player.click + (player.click * prestige_mult));
+    player_dps.innerHTML = Math.floor(player.damage + (player.damage * prestige_mult));
     shop_money.innerHTML = shop.money;
     shop_DPS_cost.innerHTML = shop.DPScost;
     shop_CLICK_cost.innerHTML = shop.CLICKcost;
