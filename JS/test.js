@@ -70,7 +70,7 @@ window.onload = () => {
     accum_level--;
 
     level = accum_level;
-    shop.money += Math.floor(parseInt(accum_money));
+    shop.money += Math.floor(accum_money);
     enemy.hp = ((1 / 10) * Math.pow(level, 2) + 6);
 
     enemy_hp.innerHTML = enemy.hp;
