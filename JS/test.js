@@ -98,15 +98,34 @@ window.onbeforeunload = () => {
     localStorage.setItem('shop_click_cost', shop.CLICKcost);
 }
 
-var increaseDPS = () => {
-    if (shop.money >= shop.DPScost) {
-        shop.money -= shop.DPScost;
-        player.damage++;
-        shop.DPScost = Math.floor((Math.pow(1 / 10, 4) * Math.pow(player.damage, 2)) + ((6 / 5) * player.damage) + 5);
 
-        player_dps.innerHTML = Math.floor(player.damage + (player.damage * prestige_mult));
-        shop_money.innerHTML = shop.money;
-        shop_DPS_cost.innerHTML = shop.DPScost;
+var pressedKeys = {};
+var keys = [16, 17];
+
+document.addEventListener('keydown', event => {
+    pressedKeys[event.keyCode] = true
+});
+
+document.addEventListener('keyup', event => {
+    pressedKeys[event.keyCode] = false
+})
+
+
+var increaseDPS = () => {
+    var mult = 1;
+    mult = (pressedKeys[0]) ? 10 : 1;
+    mult = (pressedKeys[1]) ? 100 : 1;
+    console.log(mult);
+    for (var i = 0; i < mult; i++) {
+        if (shop.money >= shop.DPScost) {
+            shop.money -= shop.DPScost;
+            player.damage++;
+            shop.DPScost = Math.floor((Math.pow(1 / 10, 4) * Math.pow(player.damage, 2)) + ((6 / 5) * player.damage) + 5);
+
+            player_dps.innerHTML = Math.floor(player.damage + (player.damage * prestige_mult));
+            shop_money.innerHTML = shop.money;
+            shop_DPS_cost.innerHTML = shop.DPScost;
+        }
     }
 }
 
