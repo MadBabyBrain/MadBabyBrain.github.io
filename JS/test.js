@@ -35,8 +35,6 @@ var off_start_date
 
 
 window.onload = () => {
-    resizecanvas();
-
     enemy_hp = document.getElementById('e_health_value');
     player_click_dmg = document.getElementById('p_click_damage_value');
     player_dps = document.getElementById('p_dps_value');
