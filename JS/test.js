@@ -35,6 +35,7 @@ var off_start_date
 
 
 window.onload = () => {
+    resizecanvas();
 
     enemy_hp = document.getElementById('e_health_value');
     player_click_dmg = document.getElementById('p_click_damage_value');
@@ -99,7 +100,18 @@ window.onbeforeunload = () => {
 }
 
 
-var pressedKeys = {};
+window.onresize = () => {
+    resizecanvas();
+};
+
+
+function resizecanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+
+var pressedKeys = { 16: false, 17: false };
 var keys = [16, 17];
 
 document.addEventListener('keydown', event => {
