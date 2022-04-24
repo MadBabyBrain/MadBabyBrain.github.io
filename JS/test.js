@@ -152,11 +152,12 @@ var pressedKeys = {
 var keys = [16, 17];
 
 document.addEventListener('keydown', event => {
-    pressedKeys[event.keyCode] = true
+    console.log(event.key)
+    pressedKeys[event.key] = true
 });
 
 document.addEventListener('keyup', event => {
-    pressedKeys[event.keyCode] = false
+    pressedKeys[event.key] = false
 })
 
 var wheelAmount = 0;
