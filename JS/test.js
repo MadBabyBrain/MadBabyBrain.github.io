@@ -1,5 +1,3 @@
-
-
 var level;
 var prestige_level;
 var prestige_mult;
@@ -45,16 +43,54 @@ window.onload = () => {
     curr_pres_level = document.getElementById('curr_pres_level');
     title = document.getElementById('title');
 
-    if (localStorage.getItem('off_start_date')) { var seconds = Math.floor((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date'))); }
-    if (localStorage.getItem('level')) { level = parseInt(localStorage.getItem('level')); } else { level = 1 }
-    if (localStorage.getItem('prestige_level')) { prestige_level = parseInt(localStorage.getItem('prestige_level')); } else { prestige_level = 500 }
-    if (localStorage.getItem('prestige_mult')) { prestige_mult = parseInt(localStorage.getItem('prestige_mult')); } else { prestige_mult = 0 }
-    if (localStorage.getItem('enemy')) { enemy.hp = parseInt(localStorage.getItem('enemy')); } else { enemy.hp = 8 }
-    if (localStorage.getItem('player_click')) { player.click = parseInt(localStorage.getItem('player_click')); } else { player.click = 1 }
-    if (localStorage.getItem('player_dmg')) { player.damage = parseInt(localStorage.getItem('player_dmg')); } else { player.damage = 0 }
-    if (localStorage.getItem('shop_money')) { shop.money = parseInt(localStorage.getItem('shop_money')); } else { shop.money = 0 }
-    if (localStorage.getItem('shop_dmg_cost')) { shop.DPScost = parseInt(localStorage.getItem('shop_dmg_cost')); } else { shop.DPScost = 5 }
-    if (localStorage.getItem('shop_click_cost')) { shop.CLICKcost = parseInt(localStorage.getItem('shop_click_cost')); } else { shop.CLICKcost = 1 }
+    if (localStorage.getItem('off_start_date')) {
+        var seconds = Math.floor((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date')));
+    }
+    if (localStorage.getItem('level')) {
+        level = parseInt(localStorage.getItem('level'));
+    } else {
+        level = 1
+    }
+    if (localStorage.getItem('prestige_level')) {
+        prestige_level = parseInt(localStorage.getItem('prestige_level'));
+    } else {
+        prestige_level = 500
+    }
+    if (localStorage.getItem('prestige_mult')) {
+        prestige_mult = parseInt(localStorage.getItem('prestige_mult'));
+    } else {
+        prestige_mult = 0
+    }
+    if (localStorage.getItem('enemy')) {
+        enemy.hp = parseInt(localStorage.getItem('enemy'));
+    } else {
+        enemy.hp = 8
+    }
+    if (localStorage.getItem('player_click')) {
+        player.click = parseInt(localStorage.getItem('player_click'));
+    } else {
+        player.click = 1
+    }
+    if (localStorage.getItem('player_dmg')) {
+        player.damage = parseInt(localStorage.getItem('player_dmg'));
+    } else {
+        player.damage = 0
+    }
+    if (localStorage.getItem('shop_money')) {
+        shop.money = parseInt(localStorage.getItem('shop_money'));
+    } else {
+        shop.money = 0
+    }
+    if (localStorage.getItem('shop_dmg_cost')) {
+        shop.DPScost = parseInt(localStorage.getItem('shop_dmg_cost'));
+    } else {
+        shop.DPScost = 5
+    }
+    if (localStorage.getItem('shop_click_cost')) {
+        shop.CLICKcost = parseInt(localStorage.getItem('shop_click_cost'));
+    } else {
+        shop.CLICKcost = 1
+    }
 
     // var accum_health = 0;
     // var accum_level = level;
@@ -109,7 +145,10 @@ function resizecanvas() {
 }
 
 
-var pressedKeys = { 16: false, 17: false };
+var pressedKeys = {
+    16: false,
+    17: false
+};
 var keys = [16, 17];
 
 document.addEventListener('keydown', event => {
@@ -118,6 +157,10 @@ document.addEventListener('keydown', event => {
 
 document.addEventListener('keyup', event => {
     pressedKeys[event.keyCode] = false
+})
+
+window.addEventListener('wheel', event => {
+    onclick(event);
 })
 
 
@@ -209,4 +252,3 @@ setInterval(update = () => {
 
     enemy.hp -= ((player.damage + (player.damage * prestige_mult)) / 100)
 }, 10);
-
