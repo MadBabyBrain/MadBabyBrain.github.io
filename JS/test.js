@@ -159,10 +159,19 @@ document.addEventListener('keyup', event => {
     pressedKeys[event.keyCode] = false
 })
 
+var wheelAmount = 0;
+
 window.addEventListener('wheel', event => {
-    onclick(event);
+    // onclick(event);
+    wheelAmount++;
 })
 
+setInterval(() => {
+    if (wheelAmount > 0) {
+        wheelAmount--;
+        onclick();
+    }
+}, 10)
 
 var increaseDPS = () => {
     var mult = 1;
