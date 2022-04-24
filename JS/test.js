@@ -146,8 +146,8 @@ function resizecanvas() {
 
 
 var pressedKeys = {
-    16: false,
-    17: false
+    'Shift': false,
+    'Control': false
 };
 var keys = [16, 17];
 
@@ -176,8 +176,8 @@ setInterval(() => {
 
 var increaseDPS = () => {
     var mult = 1;
-    mult = (pressedKeys[0]) ? 10 : 1;
-    mult = (pressedKeys[1]) ? 100 : 1;
+    mult = (pressedKeys.Shift) ? 10 : 1;
+    mult = (pressedKeys.Control) ? 100 : 1;
     console.log(mult);
     for (var i = 0; i < mult; i++) {
         if (shop.money >= shop.DPScost) {
