@@ -45,6 +45,7 @@ window.onload = () => {
 
     if (localStorage.getItem('off_start_date')) {
         var seconds = Math.floor((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date')));
+        console.log(seconds)
     }
     if (localStorage.getItem('level')) {
         level = parseInt(localStorage.getItem('level'));
