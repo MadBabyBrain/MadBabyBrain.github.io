@@ -46,6 +46,17 @@ window.onload = () => {
     if (localStorage.getItem('off_start_date')) {
         var seconds = Math.floor((Date.now() / 1000) - parseInt(localStorage.getItem('off_start_date')));
         console.log(seconds)
+        let dmg = seconds * (player.damage + (player.damage * prestige_mult));
+        for (var i = 0; i < dmg; i++) {
+            enemy.hp--;
+            if (enemy.hp <= 0) {
+                shop.money += level;
+                shop_money.innerHTML = shop.money;
+                level++;
+                enemy.hp = (1 / 10) * Math.pow(level, 2) + 6;
+                title.innerHTML = 'Level: ' + level;
+            }
+        }
     }
     if (localStorage.getItem('level')) {
         level = parseInt(localStorage.getItem('level'));
