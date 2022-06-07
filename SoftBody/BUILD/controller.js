@@ -1,6 +1,6 @@
 var drawer = null;
 var create = function () {
     var can = document.createElement('canvas');
-    document.insertBefore(document.getElementsByClassName("container").item(0), can);
+    document.getElementsByClassName("container").item(0).appendChild(can);
     drawer = new Drawer(can);
 };
