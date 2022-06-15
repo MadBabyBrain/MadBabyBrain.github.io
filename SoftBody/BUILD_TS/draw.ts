@@ -1,4 +1,7 @@
-class Drawer {
+import { Action } from "./Types/Action";
+import { Object } from "./Types/Object";
+
+export class Drawer {
 
     private canvas : HTMLCanvasElement;
 
@@ -6,22 +9,27 @@ class Drawer {
         this.canvas = canvas;
     }
 
-    public draw(action: {color: string, position: {x: number, y: number}, size: {width: number, height: number}, type: string}) {
+    public draw(action: Action) {
         const context = this.canvas.getContext('2d');
-        context.fillStyle = action.color;
-        context.beginPath();
-        switch (action.type) {
-            case "rect":
-                context.rect(action.position.x - (0.5 * action.size.width), action.position.y * (0.5 * action.size.height), (0.5 * action.size.width), (0.5 * action.size.height));
-                break;
+        
+        action.Objects.forEach((obj) => {
+            obj.forEach((point) => {
+                context.fillStyle = point.Color;
+                context.beginPath();
+                switch (action.isRectangle) {
+                    case true:
+                        context.rect(point.Position.x - (0.5 * point.Size.width), point.Position.y * (0.5 * point.Size.height), (0.5 * point.Size.width), (0.5 * point.Size.height));
+                        break;
 
-            case "elips":
-                context.ellipse(action.position.x, action.position.y, action.size.width, action.size.height, 0, 0, 360, false);
-                break;
+                    case false:
+                        context.ellipse(point.Position.x, point.Position.y, point.Size.width, point.Size.height, 0, 0, 360, false);
+                        break;
 
-            default:
-                break;
-        }
-        context.closePath();
+                    default:
+                        break;
+                }
+                context.closePath();
+            })
+        })
     }
 }

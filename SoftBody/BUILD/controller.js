@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var drawer = null;
 var create = function () {
     if (!document.getElementById('drawing')) {
@@ -8,4 +10,6 @@ var create = function () {
         document.getElementById("container").appendChild(can);
         drawer = new Drawer(can);
     }
+};
+var draw = function (action) {
 };
