@@ -12,7 +12,7 @@ let scene : Action;
     Height: number;
     isRectangle: boolean;
 */
-let create = (): void => {
+let create = () => {
     if (!document.getElementById('drawing')) {
         let can = document.createElement('canvas') as HTMLCanvasElement;
         can.setAttribute('id', 'drawing');
@@ -26,7 +26,7 @@ let create = (): void => {
     }
 }
 
-let draw = (action: Action): void => {
+let draw = (action: Action) => {
     drawer.draw(action);
     requestAnimationFrame(() => draw(action));
 }
