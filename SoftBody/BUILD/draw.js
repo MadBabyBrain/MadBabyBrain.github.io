@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.Drawer = void 0;
 var Drawer = /** @class */ (function () {
     function Drawer(canvas) {
         this.canvas = canvas;
@@ -26,4 +27,4 @@ var Drawer = /** @class */ (function () {
     };
     return Drawer;
 }());
-exports["default"] = Drawer;
+exports.Drawer = Drawer;
