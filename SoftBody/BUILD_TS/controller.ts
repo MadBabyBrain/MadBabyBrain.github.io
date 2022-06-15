@@ -1,5 +1,5 @@
 import { Action } from './Types/Action.js'
-import { Drawer } from './draw.js'
+import Drawer from './draw.js'
 
 let drawer: Drawer | null = null;
 

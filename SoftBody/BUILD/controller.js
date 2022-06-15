@@ -10,7 +10,7 @@ var create = function () {
         can.width = window.innerWidth - 10;
         can.height = window.innerHeight - 110;
         document.getElementById("container").appendChild(can);
-        drawer = new draw_js_1.Drawer(can);
+        drawer = new draw_js_1["default"](can);
         scene = { bgColor: "white", Objects: [[{ Position: { x: 100, y: 100 }, Size: { width: 10, height: 10 }, Color: '#000000' }]], Width: 0, Height: 0, isRectangle: true };
     }
 };

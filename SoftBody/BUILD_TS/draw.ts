@@ -1,7 +1,7 @@
 import { Action } from "./Types/Action";
 import { Object as custObj } from "./Types/Object";
 
-export class Drawer {
+export default class Drawer {
 
     private canvas : HTMLCanvasElement;
 
