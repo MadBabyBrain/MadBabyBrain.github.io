@@ -1,5 +1,5 @@
 import { Action } from "./Types/Action";
-import { Object } from "./Types/Object";
+import { Object as custObj } from "./Types/Object";
 
 export class Drawer {
 
@@ -12,8 +12,8 @@ export class Drawer {
     public draw(action: Action) {
         const context = this.canvas.getContext('2d');
         
-        action.Objects.forEach((obj) => {
-            obj.forEach((point) => {
+        action.Objects.forEach((obj: Array<custObj>) => {
+            obj.forEach((point: custObj) => {
                 context.fillStyle = point.Color;
                 context.beginPath();
                 switch (action.isRectangle) {

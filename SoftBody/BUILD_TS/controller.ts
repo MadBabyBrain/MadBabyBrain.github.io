@@ -1,17 +1,11 @@
-import { Action } from './Types/Action'
-import { Drawer } from './draw'
+import { Action } from './Types/Action.js'
+import { Drawer } from './draw.js'
 
 let drawer: Drawer | null = null;
 
 let scene : Action;
 
-/*
-    bgColor: string;
-    Objects: Array<Array<Object>>;
-    Width: number;
-    Height: number;
-    isRectangle: boolean;
-*/
+
 let create = () => {
     if (!document.getElementById('drawing')) {
         let can = document.createElement('canvas') as HTMLCanvasElement;
