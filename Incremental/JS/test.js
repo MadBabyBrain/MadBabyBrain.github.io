@@ -264,9 +264,10 @@ var onclick = (e) => {
 }
 
 var reset = () => {
-    Object.keys(localStorage).forEach(element => {
-        console.log(element);
-    });
+    // Object.keys(localStorage).forEach(element => {
+    //     console.log(element);
+    // });
+    localStorage.clear();
 }
 
 setInterval(update = () => {
