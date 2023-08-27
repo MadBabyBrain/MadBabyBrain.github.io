@@ -264,7 +264,7 @@ var onclick = (e) => {
 }
 
 var reset = () => {
-    localStorage.forEach(element => {
+    Object.keys(localStorage).forEach(element => {
         console.log(element);
     });
 }
