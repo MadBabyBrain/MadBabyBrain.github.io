@@ -190,6 +190,10 @@ var increaseDPS = () => {
     var mult = 1;
     mult = (pressedKeys.Shift) ? 10 : 1;
     mult = (pressedKeys.Control) ? 100 : 1;
+
+    shop_DPS_cost.innerHTML = shop.DPScost * mult;
+    shop_CLICK_cost.innerHTML = shop.CLICKcost * mult;
+
     console.log(mult);
     for (var i = 0; i < mult; i++) {
         if (shop.money >= shop.DPScost) {
