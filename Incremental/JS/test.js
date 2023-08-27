@@ -263,18 +263,20 @@ var onclick = (e) => {
 }
 
 
-setInterval(update = () => {
-    // console.log('cum');
-
-    if (enemy.hp <= 0) {
-        shop.money += level;
-        shop_money.innerHTML = shop.money;
-        level++;
-        enemy.hp = (1 / 10) * Math.pow(level, 2) + 6;
-        title.innerHTML = 'Level: ' + level;
-    }
-
-    enemy_hp.innerHTML = Math.floor(enemy.hp);
-
-    enemy.hp -= ((player.damage + (player.damage * prestige_mult)) / 100)
-}, 10);
+setTimeout(() => {
+    setInterval(update = () => {
+        // console.log('cum');
+    
+        if (enemy.hp <= 0) {
+            shop.money += level;
+            shop_money.innerHTML = shop.money;
+            level++;
+            enemy.hp = (1 / 10) * Math.pow(level, 2) + 6;
+            title.innerHTML = 'Level: ' + level;
+        }
+    
+        enemy_hp.innerHTML = Math.floor(enemy.hp);
+    
+        enemy.hp -= ((player.damage + (player.damage * prestige_mult)) / 100)
+    }, 10);
+}, 1000);
