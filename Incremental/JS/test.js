@@ -136,6 +136,10 @@ var load = () => {
 }
 
 window.onbeforeunload = () => {
+    unload();
+}
+
+var unload = () => {
     off_start_date = Date.now() / 1000
     localStorage.setItem('off_start_date', off_start_date);
     localStorage.setItem('level', level);
@@ -273,6 +277,7 @@ var reset = () => {
     // });
     localStorage.clear();
     load();
+    unload();
 }
 
 setInterval(update = () => {
