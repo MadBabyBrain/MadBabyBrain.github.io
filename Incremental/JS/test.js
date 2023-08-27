@@ -33,6 +33,10 @@ var off_start_date
 
 
 window.onload = () => {
+    load();
+}
+
+var load = () => {
     enemy_hp = document.getElementById('e_health_value');
     player_click_dmg = document.getElementById('p_click_damage_value');
     player_dps = document.getElementById('p_dps_value');
@@ -268,6 +272,7 @@ var reset = () => {
     //     console.log(element);
     // });
     localStorage.clear();
+    load();
 }
 
 setInterval(update = () => {
