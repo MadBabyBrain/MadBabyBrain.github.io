@@ -159,7 +159,8 @@ function resizecanvas() {
 
 var pressedKeys = {
     'Shift': false,
-    'Control': false
+    'Control': false,
+    'r' : false
 };
 var keys = [16, 17];
 
@@ -262,21 +263,26 @@ var onclick = (e) => {
     enemy.hp -= (player.click + (player.click * prestige_mult));
 }
 
+var reset = () => {
+    localStorage.forEach(element => {
+        console.log(element);
+    });
+}
 
-setTimeout(() => {
-    setInterval(update = () => {
-        // console.log('cum');
-    
-        if (enemy.hp <= 0) {
-            shop.money += level;
-            shop_money.innerHTML = shop.money;
-            level++;
-            enemy.hp = (1 / 10) * Math.pow(level, 2) + 6;
-            title.innerHTML = 'Level: ' + level;
-        }
-    
-        enemy_hp.innerHTML = Math.floor(enemy.hp);
-    
-        enemy.hp -= ((player.damage + (player.damage * prestige_mult)) / 100)
-    }, 10);
-}, 1000);
+setInterval(update = () => {
+    // console.log('cum');
+
+    if (pressedKeys.r) reset();
+
+    if (enemy.hp <= 0) {
+        shop.money += level;
+        shop_money.innerHTML = shop.money;
+        level++;
+        enemy.hp = (1 / 10) * Math.pow(level, 2) + 6;
+        title.innerHTML = 'Level: ' + level;
+    }
+
+    enemy_hp.innerHTML = Math.floor(enemy.hp);
+
+    enemy.hp -= ((player.damage + (player.damage * prestige_mult)) / 100)
+}, 10);
